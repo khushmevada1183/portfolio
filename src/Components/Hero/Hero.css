@@ -1,0 +1,54 @@
+.hero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #ffffff;
+}
+
+.text-primary {
+  color: #ff4d5a;
+}
+
+.btn-primary {
+  background: #ff4d5a;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: #ff2d3d;
+}
+
+.social-link {
+  @apply text-white hover:text-primary transition-colors duration-300;
+}
+
+/* Preloader styles */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #ff4d5a;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
