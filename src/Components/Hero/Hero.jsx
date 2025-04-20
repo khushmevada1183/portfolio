@@ -84,7 +84,7 @@ const Hero = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://raw.githubusercontent.com/khushmevada1183/portfolio/main/public/resume.pdf"
+                  href="https://khushmevada1183.github.io/portfolio/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#66FFE3] text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-[#5CE6CC] transition-colors inline-flex items-center gap-2"
