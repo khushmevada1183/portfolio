@@ -1,74 +1,60 @@
 import { motion } from 'framer-motion';
+import './Services.css';
 
 const Services = () => {
   const services = [
     {
-      title: 'Frontend Development',
-      description: 'Building responsive and interactive user interfaces using React.js, HTML5, and CSS3.',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      )
+      title: "WEB DEVELOPMENT",
+      subtitle: "React & Next.js",
+      description: "Creating modern and responsive web applications using React.js and Next.js. Building user-friendly interfaces with clean and efficient code.",
     },
     {
-      title: 'Backend Development',
-      description: 'Creating robust server-side applications using Node.js and MongoDB.',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
-        </svg>
-      )
+      title: "UI/UX DESIGN",
+      subtitle: "Figma & Adobe XD",
+      description: "Designing intuitive user interfaces and experiences. Creating wireframes, prototypes, and visual designs that engage and delight users.",
     },
     {
-      title: 'UI/UX Design',
-      description: 'Designing intuitive and beautiful user interfaces with modern design principles.',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-        </svg>
-      )
-    },
-    {
-      title: 'Mobile Development',
-      description: 'Developing mobile applications using Android Studio and modern frameworks.',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-        </svg>
-      )
+      title: "FRONTEND DEVELOPMENT",
+      subtitle: "HTML, CSS & JavaScript",
+      description: "Building responsive websites with modern technologies. Implementing clean, maintainable code with focus on performance and accessibility.",
     }
   ];
 
   return (
-    <section id="services" className="section bg-dark">
-      <div className="container">
-        <motion.div
+    <section className="services-section bg-[#2A2A2A] py-20">
+      <div className="container mx-auto px-4">
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">What I Do</h2>
-          <div className="w-24 h-1 bg-primary mx-auto"></div>
+          <h2 className="text-6xl font-bold text-white">WHAT I DO</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-secondary p-6 rounded-lg hover:bg-secondary/80 transition-colors"
+              className="service-card bg-[#1E1E1E] rounded-3xl p-8 relative overflow-hidden group"
             >
-              <div className="text-primary mb-4">
-                {service.icon}
+              <div className="relative z-10">
+                <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
+                <h4 className="text-2xl text-white mb-6 font-script">{service.subtitle}</h4>
+                <p className="text-gray-400 text-lg">{service.description}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-gray-400">{service.description}</p>
+              <div className="absolute bottom-0 right-0 p-4 opacity-10">
+                <div className="grid grid-cols-3 gap-1">
+                  {[...Array(9)].map((_, i) => (
+                    <div key={i} className="w-2 h-2 rounded-full bg-white"></div>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

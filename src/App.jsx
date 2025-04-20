@@ -7,6 +7,7 @@ import Portfolio from "./Components/Portfolio/Portfolio";
 import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import Timeline from "./Components/Timeline/Timeline";
+import Cursor from "./Components/Cursor/Cursor";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <div className="app">
+      <Cursor />
       <Navbar />
       <main>
         <Hero />

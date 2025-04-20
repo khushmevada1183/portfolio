@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import './Timeline.css';
 import parulLogo from '../../assets/images/parul.png';
 import mamoLogo from '../../assets/images/mamo-logo.png.png';
 
@@ -8,7 +9,7 @@ const Timeline = () => {
       date: '2021 - 2025',
       title: 'B.Tech in Computer Science Engineering',
       institution: 'Parul University',
-      description: 'Completed my degree with a CGPA of 6.71/10, focusing on web development and modern technologies.',
+      description: 'Focusing on web development and modern technologies, gaining hands-on experience in building responsive and user-friendly web applications.',
       type: 'education',
       logo: parulLogo,
       logoStyle: 'bg-white'
@@ -25,20 +26,20 @@ const Timeline = () => {
   ];
 
   return (
-    <section id="timeline" className="section bg-dark py-16 px-4">
-      <div className="container mx-auto max-w-4xl">
+    <section className="timeline-section">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Journey</h2>
-          <div className="w-24 h-1 bg-primary mx-auto"></div>
+          <h2 className="section-title">MY JOURNEY</h2>
+          <div className="w-24 h-1 bg-[#66FFE3] mx-auto"></div>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto timeline-container">
           {timelineItems.map((item, index) => (
             <motion.div
               key={index}
@@ -46,27 +47,35 @@ const Timeline = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className={`relative pl-8 md:pl-10 pb-8 ${
-                index !== timelineItems.length - 1 ? 'border-l-2 border-primary' : ''
-              }`}
+              className="timeline-card"
             >
-              <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary"></div>
-              <div className="space-y-2 md:space-y-3">
-                <span className="text-primary font-semibold text-sm md:text-base">{item.date}</span>
-                <h3 className="text-lg md:text-xl font-bold">{item.title}</h3>
+              <div className="timeline-dot"></div>
+              <div className="space-y-3">
+                <span className="timeline-date">{item.date}</span>
+                <h3 className="timeline-title">{item.title}</h3>
                 <div className="flex items-center gap-3 flex-wrap">
                   {item.logo && (
-                    <div className={`rounded-lg p-1 ${item.logoStyle}`}>
+                    <div className={`logo-container ${item.logoStyle}`}>
                       <img 
                         src={item.logo} 
                         alt={`${item.institution} logo`} 
-                        className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                        className="w-10 h-10 object-contain"
                       />
                     </div>
                   )}
-                  <p className="text-gray-400 text-sm md:text-base">{item.institution}</p>
+                  <p className="timeline-institution">{item.institution}</p>
                 </div>
-                <p className="text-gray-300 text-sm md:text-base">{item.description}</p>
+                <p className="timeline-description">{item.description}</p>
+                {item.link && (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#66FFE3] hover:underline mt-2 inline-block"
+                  >
+                    View Project →
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

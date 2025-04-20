@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import profileImage from '../../assets/images/boy-avatar.png';
+import './About.css';
 
 const About = () => {
   const skills = [
@@ -10,61 +10,43 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section bg-secondary py-16 px-4">
-      <div className="container mx-auto max-w-6xl">
+    <section className="about-section">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-          <div className="w-24 h-1 bg-primary mx-auto"></div>
+          <h2 className="section-title">ABOUT ME</h2>
+          <div className="w-24 h-1 bg-[#66FFE3] mx-auto"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-8"
           >
-            <div className="relative w-full max-w-[280px] md:max-w-md mx-auto aspect-square rounded-2xl overflow-hidden shadow-xl">
-              <img 
-                src={profileImage} 
-                alt="Khush Mevada"
-                className="w-full h-full object-cover object-center"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-6 text-left"
-          >
-            <div>
-              <h3 className="text-2xl md:text-2xl font-semibold mb-4">Who am I?</h3>
-              <p className="text-gray-300 mb-6 text-base md:text-lg">
-                I'm Khush Hiteshkumar Mevada, a dedicated Web Developer passionate about creating responsive, 
+            <div className="skill-card">
+              <h3 className="skill-title">Who am I?</h3>
+              <p className="about-text">
+                I'm <span className="highlight">Khush Mevada</span>, a dedicated Web Developer passionate about creating responsive, 
                 user-friendly websites with modern web technologies. My focus is on delivering exceptional 
                 user experiences through clean, efficient front-end development.
               </p>
-              <p className="text-gray-300 text-base md:text-lg">
+              <p className="about-text">
                 With a strong foundation in web technologies and a keen eye for design, I'm committed to 
                 building modern, accessible, and performant web applications that make a difference.
               </p>
             </div>
 
-            <div>
-              <h3 className="text-2xl md:text-2xl font-semibold mb-4">My Skills</h3>
-              <div className="flex flex-wrap gap-2 md:gap-3">
+            <div className="skill-card">
+              <h3 className="skill-title">My Skills</h3>
+              <div className="flex flex-wrap gap-3">
                 {skills.map((skill, index) => (
                   <motion.span
                     key={index}
@@ -72,7 +54,7 @@ const About = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="bg-dark text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full text-sm"
+                    className="skill-tag"
                   >
                     {skill}
                   </motion.span>
