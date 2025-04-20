@@ -8,50 +8,51 @@ const Hero = () => {
 
   return (
     <section className="hero min-h-screen flex items-center relative overflow-hidden bg-[#2A2A2A]">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 pt-16 md:pt-0">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Text Content */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-6"
+            className="space-y-6 pt-8 md:pt-0"
           >
-            <div>
+            <div className="space-y-4">
               <motion.p 
-                className="text-2xl mb-2"
+                className="text-base sm:text-xl md:text-2xl mb-2 tracking-wide"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                HELLO, <span className="text-[#66FFE3]">MY NAME IS</span>
+                <span className="block sm:inline">HELLO,</span>{" "}
+                <span className="text-[#66FFE3] block sm:inline">MY NAME IS</span>
               </motion.p>
               
               <motion.h1 
-                className="text-7xl md:text-8xl font-bold mb-4 leading-tight"
+                className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight tracking-normal"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <span className="text-[#66FFE3]">KHUSH</span>{" "}
-                <span className="text-white">MEVADA</span>
+                <span className="text-[#66FFE3] block sm:inline">KHUSH</span>{" "}
+                <span className="text-white block sm:inline">MEVADA</span>
               </motion.h1>
               
               <motion.div 
-                className="flex items-center gap-2 mb-6"
+                className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-2 mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <span className="text-white/80 text-xl">I AM</span>
-                <span className="text-3xl font-script text-white">Web Developer</span>
+                <span className="text-white/80 text-base sm:text-lg">I AM</span>
+                <span className="text-lg sm:text-2xl font-script text-white">Web Developer</span>
               </motion.div>
 
               <motion.p 
                 className="text-lg text-white/70 mb-8 max-w-xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
               >
                 From Gujarat, India. I specialize in creating responsive and user-friendly websites 
                 with modern web technologies.
@@ -61,7 +62,7 @@ const Hero = () => {
                 className="flex gap-6 items-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <a 
                   href="https://www.linkedin.com/in/khush-mevada-a880a7222" 
