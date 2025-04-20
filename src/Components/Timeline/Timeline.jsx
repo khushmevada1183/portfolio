@@ -25,8 +25,8 @@ const Timeline = () => {
   ];
 
   return (
-    <section id="timeline" className="section bg-dark">
-      <div className="container">
+    <section id="timeline" className="section bg-dark py-16 px-4">
+      <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ const Timeline = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4">My Journey</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Journey</h2>
           <div className="w-24 h-1 bg-primary mx-auto"></div>
         </motion.div>
 
@@ -46,23 +46,27 @@ const Timeline = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className={`relative pl-8 pb-8 ${index !== timelineItems.length - 1 ? 'border-l-2 border-primary' : ''}`}
+              className={`relative pl-8 md:pl-10 pb-8 ${
+                index !== timelineItems.length - 1 ? 'border-l-2 border-primary' : ''
+              }`}
             >
               <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary"></div>
-              <div className="space-y-2">
-                <span className="text-primary font-semibold">{item.date}</span>
-                <h3 className="text-xl font-bold">{item.title}</h3>
-                <div className="flex items-center gap-3">
+              <div className="space-y-2 md:space-y-3">
+                <span className="text-primary font-semibold text-sm md:text-base">{item.date}</span>
+                <h3 className="text-lg md:text-xl font-bold">{item.title}</h3>
+                <div className="flex items-center gap-3 flex-wrap">
                   {item.logo && (
-                    <img 
-                      src={item.logo} 
-                      alt={`${item.institution} logo`} 
-                      className={`w-10 h-10 object-contain rounded-lg p-1 ${item.logoStyle}`}
-                    />
+                    <div className={`rounded-lg p-1 ${item.logoStyle}`}>
+                      <img 
+                        src={item.logo} 
+                        alt={`${item.institution} logo`} 
+                        className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                      />
+                    </div>
                   )}
-                  <p className="text-gray-400">{item.institution}</p>
+                  <p className="text-gray-400 text-sm md:text-base">{item.institution}</p>
                 </div>
-                <p className="text-gray-300">{item.description}</p>
+                <p className="text-gray-300 text-sm md:text-base">{item.description}</p>
               </div>
             </motion.div>
           ))}
