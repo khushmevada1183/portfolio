@@ -10,7 +10,7 @@ const About = () => {
   ];
 
   return (
-    <section className="about-section">
+    <section id="about" className="about-section">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

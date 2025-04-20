@@ -24,7 +24,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section className="portfolio-section">
+    <section id="portfolio" className="portfolio-section">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

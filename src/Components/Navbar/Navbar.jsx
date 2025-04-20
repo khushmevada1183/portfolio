@@ -23,12 +23,12 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-dark/95 backdrop-blur-sm py-4' : 'bg-transparent py-6'
+      isScrolled ? 'bg-[#1E1E1E]/95 backdrop-blur-sm shadow-lg py-4' : 'bg-transparent py-6'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <a href="#" className="text-2xl font-bold text-white">
-            Khush<span className="text-primary">.dev</span>
+            Khush<span className="text-[#66FFE3]">.dev</span>
           </a>
 
           {/* Desktop Menu */}
@@ -37,7 +37,7 @@ const Navbar = () => {
               <a
                 key={index}
                 href={item.href}
-                className="text-gray-300 hover:text-primary transition-colors"
+                className="text-white hover:text-[#66FFE3] transition-colors text-lg font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-[#66FFE3] after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.title}
               </a>
@@ -46,7 +46,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-300 hover:text-primary"
+            className="md:hidden text-white hover:text-[#66FFE3] transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg
@@ -84,12 +84,12 @@ const Navbar = () => {
               transition={{ duration: 0.3 }}
               className="md:hidden mt-4"
             >
-              <div className="flex flex-col space-y-4">
+              <div className="flex flex-col space-y-4 bg-[#1E1E1E]/95 backdrop-blur-sm p-4 rounded-lg">
                 {menuItems.map((item, index) => (
                   <a
                     key={index}
                     href={item.href}
-                    className="text-gray-300 hover:text-primary transition-colors"
+                    className="text-white hover:text-[#66FFE3] transition-colors text-lg font-medium"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.title}
