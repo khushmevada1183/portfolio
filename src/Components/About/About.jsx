@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import profileImage from '../../assets/images/khush-profile.jpg';
+import profileImage from '../../assets/images/boy-avatar.png';
 
 const About = () => {
   const skills = [

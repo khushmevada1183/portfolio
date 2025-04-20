@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import parulLogo from '../../assets/images/parul.png';
+import mamoLogo from '../../assets/images/mamo-logo.png.png';
 
 const Timeline = () => {
   const timelineItems = [
@@ -7,14 +9,18 @@ const Timeline = () => {
       title: 'B.Tech in Computer Science Engineering',
       institution: 'Parul University',
       description: 'Completed my degree with a CGPA of 6.71/10, focusing on web development and modern technologies.',
-      type: 'education'
+      type: 'education',
+      logo: parulLogo,
+      logoStyle: 'bg-white'
     },
     {
       date: 'December 2024 - March 2025',
       title: 'Web Developer',
       institution: 'MaMo TechnoLabs LLP',
       description: 'Worked as a web developer, developing responsive websites for clients.',
-      type: 'experience'
+      type: 'experience',
+      logo: mamoLogo,
+      logoStyle: 'bg-black'
     }
   ];
 
@@ -46,7 +52,16 @@ const Timeline = () => {
               <div className="space-y-2">
                 <span className="text-primary font-semibold">{item.date}</span>
                 <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="text-gray-400">{item.institution}</p>
+                <div className="flex items-center gap-3">
+                  {item.logo && (
+                    <img 
+                      src={item.logo} 
+                      alt={`${item.institution} logo`} 
+                      className={`w-10 h-10 object-contain rounded-lg p-1 ${item.logoStyle}`}
+                    />
+                  )}
+                  <p className="text-gray-400">{item.institution}</p>
+                </div>
                 <p className="text-gray-300">{item.description}</p>
               </div>
             </motion.div>
