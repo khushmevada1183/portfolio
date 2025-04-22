@@ -1,46 +1,33 @@
-import { useState, useEffect } from 'react';
-import Navbar from "./Components/Navbar/Navbar";
-import Hero from "./Components/Hero/Hero";
-import About from "./Components/About/About";
-import Services from "./Components/Services/Services";
-import Portfolio from "./Components/Portfolio/Portfolio";
-import Contact from "./Components/Contact/Contact";
-import Footer from "./Components/Footer/Footer";
-import Timeline from "./Components/Timeline/Timeline";
-import Cursor from "./Components/Cursor/Cursor";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import Home from './Components/Home';
+import Cart from './Components/Cart';
+import Wishlist from './Components/Wishlist';
+import Account from './Components/Account';
+import ProductDetails from './Components/ProductDetails';
+import { CartProvider } from './Context/CartContext';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading time
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-  }, []);
-
-  if (isLoading) {
-    return (
-      <div className="preloader">
-        <div className="loader"></div>
-      </div>
-    );
-  }
-
   return (
-    <div className="app">
-      <Cursor />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Timeline />
-        <Services />
-        <Portfolio />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <CartProvider>
+      <Router>
+        <div className="min-h-screen bg-[#121212] text-gray-100">
+          <Navbar />
+          <main className="container mx-auto px-6 py-8">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Home />} />
+              <Route path="/deals" element={<div>Today's Deals</div>} />
+              <Route path="/categories" element={<div>All Categories</div>} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/wishlist" element={<Wishlist />} />
+              <Route path="/account" element={<Account />} />
+              <Route path="/product/:id" element={<ProductDetails />} />
+            </Routes>
+          </main>
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 

@@ -9,11 +9,11 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 10;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #2A2A2A;
+  background-color: #007491;
   color: white;
 }
 
