@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Dancing+Script:wght@400;700&display=swap');
+
+.hero {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #ffffff;
+}
+
+.text-primary {
+  color: #ff4d5a;
+}
+
+.btn-primary {
+  background: #ff4d5a;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: #ff2d3d;
+}
+
+.font-script {
+  font-family: 'Dancing Script', cursive;
+}
+
+.social-link {
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+}
+
+/* Profile image animation */
+.hero .profile-image {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.hero .profile-image:hover {
+  transform: scale(1.02);
+}
+
+/* Dot pattern animation */
+@keyframes pulse {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+.hero .dot-pattern {
+  animation: pulse 3s infinite;
+}
+
+/* Preloader styles */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #ff4d5a;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
