@@ -39,5 +39,6 @@ jobs:
           path: './dist'
       
       - name: Deploy to GitHub Pages
+        if: false  # skipping Pages API deploy to avoid run_id/artifact exchange 404s; using deploy-gh-pages.yml fallback instead
         id: deployment
         uses: actions/deploy-pages@v2 
